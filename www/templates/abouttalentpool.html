@@ -1,0 +1,146 @@
+<style type="text/css">
+
+ .platform-android .bar .title {
+  font-size: 19px;
+  line-height: 44px;
+  margin: 0px 0px 0px 70px;
+}
+  [contenteditable="true"] { padding: 10px; outline: 1px dashed #CCC; }
+ [contenteditable]:focus {
+    border-style: dashed;
+    border-color: black;
+    border-width: 1px;
+}
+.enterdetail {
+  border: 1px solid #000000;
+    padding: 5px;
+  
+}
+
+.item {
+  background-color: #ffffff;
+  border-color: #dddddd;
+  border-style: solid;
+  border-width: 1px;
+  color: #444444;
+  display: block;
+  font-size: 16px;
+  margin: -1px;
+  padding: 0px 0px 0px 0px;
+  position: relative;
+  z-index: 2;
+}
+
+.savebut.button.button-balanced {
+  background-color: #98f7be;
+  border-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  margin: 10px 0 0 28px;
+  width: 200px;
+}
+
+.button.button-balanced {
+  background-color: #98f7be;
+  border-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+ margin: 10px 0 0 20px;
+  width: 310px;
+}
+
+/* CSS goes here */
+input {
+  width: 50px;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+  color: #111111;
+ background: #fafafc none repeat scroll 0 0;
+  display: block;
+  font-size: 14px;
+  height: 34px;
+  line-height: 16px;
+  padding-left: 7px;
+  padding-top: 2px;
+  vertical-align: middle;
+  width:80%;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #9a9a9a;
+}
+
+.aboutmekatext {
+  background: #fafafc none repeat scroll 0 0;
+  display: block;
+  font-size: 14px;
+  height: 100px;
+  line-height: 1.3;
+  padding-left: 8px;
+  padding-top: 6px;
+  width: 246px;
+}
+
+</style>
+<ion-view title="About"  class=" " >
+     <ion-content padding="true" class="has-header" ng-controller="abouttalentpoolCtrl"  >
+
+     <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="http://destini.io/public/frontEnd/uploads/image/{{abouttalent.profile_photo}}" height="auto" width="100%">
+        </div>
+        <div class="spacer" style="width: 300px; height: 15px;"></div>
+       
+        
+        
+        
+ <div class="enterdetail">
+ <h3><center>Details</center></h3>
+			<div class="col-sm-6">
+    <!-- FORM ============ -->
+			<form name="userForm"  class="list" method="post" novalidate>
+			<h4  aria-label="About me ">Name:{{abouttalent.name}}</h4>
+			
+            
+            <h4  aria-label="About me ">About me:{{abouttalent.about_me}}</h4>
+            
+            <h4 aria-label=" ">Age:{{abouttalent.age}}</h4>
+            
+            <h4 aria-label=" ">Facebook Profile Link: {{abouttalent.fb_profile}}</h4>
+			
+           
+            <h4 aria-label=" ">Twitter Profile link:{{abouttalent.tiwitter_profile}} </h4>
+			
+            <h4 aria-label=" ">Website:{{abouttalent.website}} </h4>
+            
+            <h4 aria-label=" ">Gender:{{abouttalent.gender}} </h4>
+            
+            <h4 aria-label=" ">Eyes:{{abouttalent.eyes}}</h4>
+            
+            <h4>Build:{{abouttalent.build}}</h4>
+             
+            <h4 aria-label=" ">Height (cms):{{abouttalent.height}}</h4>
+            
+			 <h4 aria-label=" ">Weight:{{abouttalent.weight}}</h4>
+            
+			 <h4 aria-label=" ">School:{{abouttalent.responder_quali.school}}</h4>
+            
+			 <h4 aria-label=" ">Passing Year:{{abouttalent.responder_quali.passing_year}}</h4>
+            
+			
+			 <h4 aria-label=" ">Hair Color:{{abouttalent.hair_color}}</h4>
+            
+			 <h4 aria-label=" ">Ethnicities:{{abouttalent.ethnicities}}</h4>
+            
+			<h4 aria-label=" ">Sports Skills:{{abouttalent.sports}}</h4>
+            
+		    <h4 aria-label=" ">Roles- Movies:{{abouttalent.roles_movies}}</h4>
+            
+			 <h4 aria-label=" ">Roles- Television:{{abouttalent.roles_tv}}</h4>
+            
+                  
+			
+
+    </form>
+  </div>
+  </div>
+  
+
+    </ion-content>
+</ion-view>

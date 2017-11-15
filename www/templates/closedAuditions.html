@@ -1,0 +1,91 @@
+<style>
+.tag-box{
+  width: 100%;
+  float: left;
+}
+.tag-box ul{
+  width: 100%;
+  float: left;
+}
+.tag-list li{
+  background-color:#EA4335;
+  padding:5px 10px;
+  color: #fff;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  margin-left:33px;
+  display: inline-block;
+}
+.tag-list li:after{
+  width: 7px;
+  height: 7px;
+  content: "";
+  left: -10px;
+  top: 12px;
+  border-radius: 50px;
+  position: absolute;
+  background-color:#fff;
+}
+.tag-list li:before{
+  border-left:0px solid rgba(0,0,0,0);
+  border-right:35px solid #ea4335;
+  border-top:15px solid rgba(0,0,0,0);
+  border-bottom:15px solid rgba(0,0,0,0);
+  content: "";
+  left:-33px;
+  top: 0;
+  position: absolute;
+
+}
+.tag-list li a{
+  color: #fff;
+  text-decoration: none;
+}
+</style>
+
+
+<ion-view style="" id="page14"  title="Closed Auditions">
+    <ion-content class="has-header"  padding="true" >
+    
+        <form class="list" id="closedAuditions-form17">
+            <label style="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input placeholder="Search Auditions " type="search" ng-model="searchAudition">
+            </label>
+
+
+
+         </form>
+        <div ng-repeat="x in auditions |  filter: searchAudition">
+          <div style="" id="openAuditions-list-item-container7" class="item item-body">
+                <div style="margin-top:0px;color:#000000;text-align:center;" id="openAuditions-markdown3">
+                   <p>
+                       <strong>{{x.session_name}}</strong>
+                  </p>
+                </div>
+            <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown4">
+                   <p>
+                    <strong>Start Date:</strong>{{x.start_date}}
+                  </p>
+            </div>
+            <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown5">
+                <p>
+                    <strong>End Date:</strong>{{x.end_date}}</p>
+            </div>
+            <div class="tag-box">
+                     <ul class="tag-list">
+                   <li><a  ng-href="#/page34/{{x.id}}">New Submission ({{x.submissions}})</a>
+                   <li><a  ng-href="#/page35/{{x.id}}">Selected({{x.selected_count}})</a>
+                   <li><a  ng-href="#/page36/{{x.id}}">Rejected ({{x.rejected_count}})</a>
+                   <li><a  ng-href="#/page37/{{x.id}}">Pending ({{x.pending_count}})</a>
+                   <li><a  ng-href="#/page38/{{x.id}}">Trash ({{x.trash_count}})</a>
+              </ul>
+              </div>
+            <a class="button button-positive button-small button-block button-outline icon ion-edit" id="openAuditions-button10" ng-href="#/page20/{{x.id}}">Edit Audition</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-android-refresh" id="openAuditions-button11" ng-click="reopenSession(x.id)">Reopen Audition</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-android-delete" id="openAuditions-button11" ng-click="deleteSession(x.id)">Delete Audition</a>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>

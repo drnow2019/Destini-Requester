@@ -1,0 +1,40 @@
+<style type="text/css">
+    .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+</style>
+<ion-view style="" id="page28" title="View Session">
+    <ion-content class="has-header" padding="true" ng-controller="viewCtrl">
+        
+        <!--<div ng-repeat="x in auditions |  filter: searchAudition">-->
+          <ion-list id="talentPool-list12">
+       <!--  <div> 
+         <a class="button button-positive button-small button-block button-outline icon ion-edit" id="openAuditions-button10" ng-click="selected(x.responses_id)">Selected</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-android-person-add" id="openAuditions-button11"ng-click="pending(x.responses_id)">Pending</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-edit" id="openAuditions-button10"ng-click="trash(x.responses_id)" >Trash</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-edit" id="openAuditions-button10" ng-href="#/page1/page28/{{x.responses_id}}" >View</a></div> -->
+          <div>
+            <ion-item style="">Download:
+            <hr>
+             <h2balanced>
+                    <a style="white-space:normal;" ng-click="download(x.id)">Download Document</a>
+                </h2balanced>
+            </ion-item>
+        </div>
+        
+      </ion-list>
+    </ion-content>
+</ion-view>

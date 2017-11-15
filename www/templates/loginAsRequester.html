@@ -1,0 +1,41 @@
+<ion-view  id="page6" title="Login As Requester" hide-nav-bar="true" ng-hide="{{hideright}}">
+<ion-header-bar align-title="center" class="bar-stable">
+  
+  <i class="title">Login As Requester</i>
+</ion-header-bar>
+    <ion-content class="has-header" padding="true" style="background: url(img/QdLeTBT9KlRxxbahtdqQ_green_background.png) no-repeat center;background-size:cover;" ng-controller="loginAsRequesterCtrl">
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/QCZaZ7ZRLuG0sXcdZ4Mo_destinivers3.png" height="10%" width="60%">
+        </div>
+        <div>
+        <form name="userForm" id="loginAsRequester-form5"  ng-submit="submitForm()" class="list" method="post" novalidate>
+        
+
+        <!-- EMAIL -->
+
+
+           
+            <label id="requesterSignUp-input7" class="item item-input" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.firstName.$pristine }">
+                <input placeholder="Enter Register Email-id" type="email" ng-model="user.email" name="email" required/>
+            </label>
+            <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block"><font color="red">Enter a valid email.</font></p>
+            
+
+        <!-- Password --> 
+        
+            <label class="form-group item item-input" ng-class="{ 'has-error' : userForm.pass.$invalid && !userForm.pass.$pristine }">
+                <input placeholder="Enter Requester Password" type="password" ng-model="user.password"  required />
+            </label>
+
+            <button class="button button-stable  button-block" id="loginAsRequester-button5" ng-click="login()" ng-disabled="userForm.$invalid">Log in </button>
+        </form></div>
+        <center><button  id="login-button5" class=" button button-light  button-small button-clear cc" ui-sref="forgetPassword">Forget Password??</button></center>
+        <button class="button button-light  button-block button-outline" id="loginAsRequester-button6" ui-sref="requesterSignUp">Or create an account</button>
+    <!-- <label class="item">
+    <button class="button button-block button-positive" ng-click="fbLogin()">
+    Login with Facebook
+    </button>
+</label> -->
+
+    </ion-content>
+</ion-view>

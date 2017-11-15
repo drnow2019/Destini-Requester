@@ -1,0 +1,95 @@
+<style>
+.tag-box{
+  width: 100%;
+  float: left;
+}
+.tag-box ul{
+  width: 100%;
+  float: left;
+}
+.tag-list li{
+  background-color:#EA4335;
+  padding:5px 10px;
+  color: #fff;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  margin-left:33px;
+  display: inline-block;
+}
+.tag-list li:after{
+  width: 7px;
+  height: 7px;
+  content: "";
+  left: -10px;
+  top: 12px;
+  border-radius: 50px;
+  position: absolute;
+  background-color:#fff;
+}
+.tag-list li:before{
+  border-left:0px solid rgba(0,0,0,0);
+  border-right:35px solid #ea4335;
+  border-top:15px solid rgba(0,0,0,0);
+  border-bottom:15px solid rgba(0,0,0,0);
+  content: "";
+  left:-33px;
+  top: 0;
+  position: absolute;
+
+}
+.tag-list li a{
+  color: #fff;
+  text-decoration: none;
+}
+</style>
+
+
+<ion-view style="" id="page9" title="Invite Only Auditions">
+    <ion-content class="has-header" padding="true">
+        <form class="list" id="inviteonlyAuditions-form17">
+            <label style="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input placeholder="Search Auditions " type="search" ng-model="searchAudition">
+            </label>
+         </form>
+         <a class="button button-positive button-small button-block button-outline icon ion-android-arrow-down" id="openAuditions-button11" ng-click="downloadall()">Download All Responses</a>
+       <div ng-repeat="x in auditions |  filter: searchAudition"> 
+
+      
+          <div style="" id="openAuditions-list-item-container7" class="item item-body">
+              
+                <div style="margin-top:0px;color:#000000;text-align:center;" id="openAuditions-markdown3">
+                   <p>
+                       <strong>{{x.session_name}}</strong>
+                  </p>
+                </div>
+            <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown4">
+                   <p>
+                    <strong>Start Date:</strong>{{x.start_date}}
+                  </p>
+            </div>
+            <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown5">
+                <p>
+                    <strong>End Date:</strong>{{x.end_date}}</p>
+            </div>
+            <div class="tag-box">
+                <ul class="tag-list">
+                   <li><a  ng-href="#/page29/{{x.id}}">New Submission ({{x.submissions}})</a></li>
+                   <li><a  ng-href="#/page30/{{x.id}}">Selected({{x.selected_count}})</a></li>
+                   <li><a  ng-href="#/page31/{{x.id}}">Rejected ({{x.rejected_count}})</a></li>
+                   <li><a  ng-href="#/page32/{{x.id}}">Pending ({{x.pending_count}})</a></li>
+                   <li><a  ng-href="#/page33/{{x.id}}">Trash ({{x.trash_count}})</a></li>
+
+              </ul>
+              </div> 
+            <a class="button button-positive button-small  button-outline icon ion-edit" id="openAuditions-button10" style="width:48%;margin-bottom:5px;margin-top:5px" ng-href="#/page19/{{x.id}}"> Edit Audition</a>
+            <a class="button button-positive button-small  button-outline icon ion-android-person-add" id="openAuditions-button11" style="width:48%;margin-bottom:5px;margin-top:5px" ng-href="#/page17/{{x.id}}"> invite someone</a>
+            <a class="button button-positive button-small  button-outline icon ion-android-share-alt" id="openAuditions-button11" style="width:48%;margin-bottom:5px;margin-top:5px" ng-click="shareAnywhere(x.session_name,x.start_date,x.end_date,x.short_description,x.city)"> Share Audition</a>
+            <a class="button button-positive button-small  button-outline icon ion-android-arrow-down" id="openAuditions-button11" style="width:48%;margin-bottom:5px;margin-top:5px"  ng-click="download(x.id)"> Download </a>
+            <a class="button button-positive button-small  button-outline icon ion-android-close" id="openAuditions-button11" style="width:48%;margin-bottom:5px;margin-top:5px" ng-click="closeSession(x.id)"> Close Audition</a>
+            <a class="button button-positive button-small  button-outline icon ion-android-delete" id="openAuditions-button11"   style="width:48%;margin-bottom:5px;margin-top:5px" ng-click="deleteSession(x.id)"> Delete Audition</a>
+          </div>
+        </div>
+    </ion-content>
+</ion-view>

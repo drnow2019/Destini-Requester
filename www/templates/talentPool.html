@@ -1,0 +1,102 @@
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view class="pop" style="width:95%;height:250px"> 
+    <ion-content ng-controller="talentPoolCtrl">
+      <div style="padding:0px 20px;">
+           <span class="button button-balanced button-small button-block" style="color:#160B03;"><b>Send Invitations for these Session</b></span>
+           <form  name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+                <title ></title>
+                
+               
+               <div ng-repeat="item in invite |  filter: searchUsers">
+                    <ul class="list">
+                       <li class="item item-checkbox"  >
+                               {{item.session_name}}
+                          <label class="checkbox">
+                             <input type="checkbox" ng-checked="master"  ng-model="item.SELECTED"  ng-true-value="1" ng-false-value="0">
+                          </label>
+                        </li>
+                      </ul>
+                      </div> 
+                <button class="button button-positive button-small button-outline " id="inviteUsers-button10" ng-click="popover.hide()" style="width:48%;" >Cancel</button>
+                <input type="submit" value="Send Invite" class="button button-positive button-small button-outline 
+                icon ion-android-send" id="inviteUsers-button10" style="width:48%;" ng-click="sendinvite(invite)" ng-disabled="userForm.$invalid"></div>
+        </form>
+       </div>
+    </ion-content>
+  </ion-popover-view>
+</script>
+
+<!--
+
+*<div  id="inviteUsers-markdown3">
+                 <ul class="list">
+                   <li class="item item-checkbox"  >
+                           Select All
+                      <label class="checkbox">
+                         <input type="checkbox" ng-model="master">
+                      </label>
+                    </li>
+                  </ul>
+               </div>*/
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view class="pop" style="width:95%;height:250px"> 
+    <ion-content ng-controller="talentPoolCtrl">
+      <div style="margin-top:0px;color:#000000;text-align:center;" id="inviteUsers-markdown3">
+                 <ul class="list">
+                   <li class="item item-checkbox"  >
+                           Select All
+                      <label class="checkbox">
+                         <input type="checkbox" ng-model="master">
+                      </label>
+                    </li>
+                  </ul>
+               </div>
+           <form>     
+               <div ng-repeat="item in invite |  filter: searchUsers">
+                 <div style="" id="inviteUsers-list-item-container7" class="item item-body">
+                  <div style="margin-top:0px;color:#000000;text-align:center;" id="inviteUsers-markdown3">
+
+                    <ul class="list">
+                       <li class="item item-checkbox"  >
+                               {{item.session_name}}
+                          <label class="checkbox">
+                             <input type="checkbox" ng-checked="master"  ng-model="item.SELECTED"  ng-true-value="1" ng-false-value="0">
+                          </label>
+                        </li>
+                      </ul>
+                   </div>    
+                </div>
+               </div>
+               <input type="submit" value="Send Invite" class="button button-positive  button-block button-outline " id="inviteUsers-button10" ng-click="submitInvite(invite)">
+          </form>
+    </ion-content>
+  </ion-popover-view>
+</script> -->
+
+
+
+<ion-view style="" id="page12" title="Talent Pool">
+    <ion-content class="has-header" padding="true" style="background: url(img/WX29EebBSGQonQXqexwW_9eSR4QQ34GDpBwYPIwpn_green_background.png) no-repeat center;background-size:cover;" ng-controller="talentPoolCtrl">
+    <form class="list" id="openAuditions-form17">
+            <label style="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input placeholder="Search Auditions " type="search" ng-model="searchTalent">
+            </label>
+
+
+
+        </form>
+        <ion-list id="talentPool-list12">
+            <ion-item style="" id="talentPool-list-item24" class="item-thumbnail-left item-icon-right balanced" ng-repeat="x in talentpool |filter: searchTalent">
+                <img src="http://destini.io/public/frontEnd/uploads/image/{{x.profile_photo}}">
+                <h2balanced>{{x.name}}
+                    <p style="white-space:normal;">{{x.place_name}},{{x.city_name}}<br>{{x.state_name}},{{x.zipcode}}
+                    </p>
+                    <button style="white-space:normal;" class="button button-positive button-small button-outline" id="inviteUsers-button10" ng-click="openPopover($event,x.id)">Invite</button> 
+                    <a  class="icon ion-android-add-circle  icon-balanced" ng-href="#/page22/{{x.id}}"></a>
+
+                </h2balanced>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

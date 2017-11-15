@@ -1,0 +1,82 @@
+<style>
+
+    .txtfield{
+        width: 100%;
+    }
+
+</style>
+
+
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view class="pop" style="width:95%;height:250px"> 
+    <ion-content ng-controller="inviteUsersCtrl">
+      <div style="padding:0px 20px;">
+           <span class="button button-balanced button-small button-block" style="color:#160B03;"><b>Send Invitations for this Session</b></span>
+           <form  name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+                <title ></title>
+                <subtitle>Please enter the email Id of the person you want to invite for this session</subtitle>
+                <input type="text" class="txtfield" placeholder="First Name" ng-model="data.firstname" required>
+                <input type="text" class="txtfield" placeholder="Last Name" ng-model="data.lastname" required>
+                <input type="email" class="txtfield" placeholder="Email Address" ng-model="data.email" required>
+                <button class="button button-positive button-small button-outline " id="inviteUsers-button10" ng-click="popover.hide()" style="width:48%;" >Cancel</button>
+                <input type="submit" value="Send Invite" class="button button-positive button-small button-outline 
+                icon ion-android-send" id="inviteUsers-button10" style="width:48%;" ng-click="inviteEmail()" ng-disabled="userForm.$invalid">
+        </form>
+       </div>
+    </ion-content>
+  </ion-popover-view>
+</script>
+
+
+
+
+<div ng-init="data=[{name:'D1' , sdate:'August 15,2016' ,edate:'August 19,2016'},
+                      {name:'D2' , sdate:'August 20,2016' ,edate:'August 25,2016'},
+                      {name:'D3'  , sdate:'August 25,2016' ,edate:'August 29,2016'},
+                       {name:'D4'  , sdate:'August 25,2016' ,edate:'August 29,2016'},
+                        {name:'D5'  , sdate:'August 25,2016' ,edate:'August 29,2016'}
+                         ]"></div>
+
+
+<ion-view style="" id="page17" title="Invite Users">
+    <ion-content class="has-header" padding="true" ng-controller="inviteUsersCtrl" >
+        <form class="list" id="inviteUsers-form17">
+            <label style="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input placeholder="Search Users " type="search" ng-model="searchUsers">
+            </label>
+        </form>
+         <div>
+        <span><i class=" button-light  button-outline button-small " style="width:48%;  margin:35px" id="inviteUsers-button10">Invite Contacts</i>
+        <button class="button button-positive button-outline button-small icon ion-person" style="width:48%" id="inviteUsers-button10" ng-click="openPopover($event)">Invite Others</button></span></div>
+      
+             <!-- <div style="margin-top:10px;color:#000000;text-align:center;" id="inviteUsers-markdown3">
+                 <ul class="list">
+                   <li class="item item-checkbox"  >
+                           Select All
+                      <label class="checkbox">
+                         <input type="checkbox" ng-model="master">
+                      </label>
+                    </li>
+                  </ul>
+               </div> -->
+           <form >     
+               <div ng-repeat="item in invite |  filter: searchUsers">
+                 <div style="margin-top:10px;" id="inviteUsers-list-item-container7" class="item item-body">
+                  <div style="margin-top:0px;color:#000000;text-align:center;" id="inviteUsers-markdown3">
+
+                    <ul class="list">
+                       <li class="item item-checkbox"  >
+                               {{item.name}}
+                          <label class="checkbox">
+                             <input type="checkbox" ng-checked="master"  ng-model="item.SELECTED"  ng-true-value="1" ng-false-value="0">
+                          </label>
+                        </li>
+                      </ul>
+                   </div>    
+                </div>
+               </div>
+               <input type="submit" value="Send Invite" class="button button-positive  button-block button-outline " id="inviteUsers-button10" ng-click="submitInvite(invite)" >
+          </form>
+    </ion-content>
+</ion-view>

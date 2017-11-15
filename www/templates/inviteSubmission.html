@@ -1,0 +1,46 @@
+
+
+
+
+<ion-view style="" id="page9" title="New Submission" hide-back-button="false">
+    <ion-content class="has-header" padding="true" ng-controller="invitenewSubmissionCtrl">
+        <form class="list" id="openAuditions-form17">
+            <label style="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input placeholder="Search Auditions " type="search" ng-model="searchAudition">
+            </label>
+        </form>
+        <div ng-repeat="x in newsubmisson |  filter: searchAudition">
+          <div style="" id="openAuditions-list-item-container7" class="item item-body">
+             
+                <div style="margin-top:0px;color:#000000;text-align:center;" id="openAuditions-markdown3">
+                   <p>
+                       <strong>{{x.name}}</strong>
+                  </p>
+                </div>
+                <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown4">
+                   <p>
+                    <strong>Photo: </strong>{{x.image_count}}
+                  </p>
+                </div>
+                <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown5">
+                <p>
+                    <strong>Video: </strong>{{x.video_count}}</p>
+               </div>
+               <div style="margin-top:0px;color:#000000; width:100%" id="openAuditions-markdown5">
+                <span>
+                    <input placeholder="Note: {{x.comment}}" type="text"class="button button-positive button-small  button-outline" name="state" ng-model="newsubmisson.comment" ><button ng-click="submitcomment(x.responses_id)" class="button button-positive button-small  button-outline">Submit</button></span>
+               </div>
+               <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown5">
+                <p>
+                    <strong>Submitted On: </strong>{{x.date}}</p>
+               </div>
+            <a class="button button-positive button-small button-block button-outline icon ion-android-checkbox" id="openAuditions-button10" ng-click="selected(x.responses_id)"><span> </span>Selected</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-android-cancel" id="openAuditions-button10" ng-click="rejected(x.responses_id)" ><span> </span>Rejected</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-alert-circled" id="openAuditions-button11"ng-click="pending(x.responses_id)"><span> </span>Pending</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-android-delete" id="openAuditions-button10"ng-click="trash(x.responses_id)" ><span> </span>Trash</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-ios-grid-view" id="openAuditions-button10" ng-click="save(x.responder_id,x.session_id,x.responses_id)" ><span> </span>View</a>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

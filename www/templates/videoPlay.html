@@ -1,0 +1,113 @@
+<style type="text/css">
+    .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+</style>
+
+
+
+<ion-view view-title="{{navTitle}}">
+    <ion-content has-header="true" padding="true" ng-controller="videoPlayCtrl">
+        <div class="list card">
+            <div class="item item-divider">
+                <i class="ion-videocamera"></i>
+                Video
+            </div>
+            <div class="padding">
+                <object width="100%" height="150">
+                    <param name="movie" value="https://www.youtube.com/embed/gvI2ClWqHO0"></param>
+                    <param name="allowFullScreen" value="true"></param
+                    <param name="allowscriptaccess" value="always"></param>
+                    <embed src="https://www.youtube.com/embed/gvI2ClWqHO0" type="application/x-shockwave-flash" width="100%" height="150" allowscriptaccess="always" allowfullscreen="true"></embed>
+                </object>
+            </div>
+      
+        <div class="list card">
+            <div class="item item-divider">
+                <i class="ion-videocamera">2</i>
+                Video
+            </div><div>
+                <a class="item" href="#" onclick="window.open('http://mercury.promaticstechnologies.com/Neotera/public/frontEnd/uploads/video/790609025001470146342.mpeg','_system', 'location=yes'); true;">
+                Open a Browser
+            </a>
+
+
+            </div>
+
+            <div>
+                <a class="item" href="#" onclick="window.open('http://mercury.promaticstechnologies.com/Neotera/public/frontEnd/uploads/video/790609025001470146342.mpeg','_blank', 'location=yes'); true;">
+                Open a Browser
+            </a>
+
+
+            </div>
+
+
+        <div class="card">
+            <ion-item>
+                <div class="video-container">
+                    <iframe src="file://storage/emulated/0/WhatsApp/Media/WhatsAppVideo/VID-20160906-WA0002.mp4" frameborder="0" width="560" height="315"></iframe>
+                </div>
+            </ion-item>
+        </div>
+        <div class="card">
+            <ion-item>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/gvI2ClWqHO0" frameborder="0" width="560" height="315"></iframe>
+                </div>
+            </ion-item>
+        </div>
+<div class="card">
+            <ion-item>
+                <div class="video-container">
+                   <button class="button" ng-click="showValue()" ng-model="video">Play from internet</button>
+                </div>
+            </ion-item>
+        </div>
+        </div>
+        <div class="">
+        fddgdg
+        <div ng-repeat="file in files">
+            <a class="item item-icon-left" href="#" ng-click="getContents(file.nativeURL)">fddgdg
+                <i ng-show="file.isDirectory" class="icon ion-folder"></i>
+                <i ng-show="file.isFile" class="icon ion-document"></i>
+                {{file.name}}
+            </a>
+        </div>
+    </div>
+    <div class="card">
+            <ion-item>
+               <div>
+                  <button class="button" ng-click="pickVideo()" ng-model="video1" >
+                   video</button>
+                     <div class="video-container">
+                   
+                         <iframe src="{{video1}}" frameborder="0" width="560" height="315"></iframe>
+                     </div>
+                </div>
+                <div>
+                     <button class="button" ng-click="showValue()" ng-model="video2" >videocccc</button>
+                      <div class="video-container">
+                   
+                       <iframe src="{{video2}}" frameborder="0" width="560" height="315"></iframe>
+                     </div
+               </div>
+            </ion-item>
+        </div>
+    
+    </div>
+    </ion-content>
+</ion-view>

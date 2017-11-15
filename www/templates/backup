@@ -1,0 +1,72 @@
+<script id="my-popover.html" type="text/ng-template">
+  <ion-popover-view class="pop" style="width:40%;height:250px">
+    
+    <ion-content ng-click="popover.hide()">
+     <span class="button button-balanced button-small button-block" style="color:#160B03;"><b>Action</b></span>
+            <a class="button button-light button-small button-block " style="color:#160B03;text-align:left"
+               ui-sref="tabsController.selected">New Submission(5)</a>
+            <a class="button button-light button-small button-block  " style="color:#160B03;text-align:left"
+               ui-sref="tabsController.selected">Selected(5)</a>
+            <a class="button button-light button-small button-block  " style="color:#160B03;text-align:left"
+               ui-sref="tabsController.selected">Rejected()</a>
+            <a class="button button-light button-small button-block  " style="color:#160B03;text-align:left"
+              ui-sref="tabsController.selected">Pending(*)</a>
+            <a class="button button-light button-small button-block  " style="color:#160B03;text-align:left"
+              ui-sref="tabsController.selected">Trash(0)</a>
+       
+    </ion-content>
+  </ion-popover-view>
+</script>
+
+
+
+<div ng-init="data=[{name:'Stunt Audition' , sdate:'August 15,2016' ,edate:'August 19,2016'},
+                      {name:'Unhi Audition' , sdate:'August 20,2016' ,edate:'August 25,2016'},
+                      {name:'Kuchbhi Audition'  , sdate:'August 25,2016' ,edate:'August 29,2016'}
+                         ]"></div>
+
+
+
+<ion-view style="" id="page9" title="Open Auditions">
+    <ion-content class="has-header" padding="true" ng-controller="openAuditionsCtrl">
+        <form class="list" id="openAuditions-form17">
+            <label style="" class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input placeholder="Search Auditions " type="search" ng-model="searchAudition">
+            </label>
+
+
+
+        </form>
+        <div ng-repeat="x in auditions |  filter: searchAudition">
+          <div style="" id="openAuditions-list-item-container7" class="item item-body">
+             <span class="icon ion-android-more-horizontal" ng-click = "openPopover($event)" style="width:10px; height:10px"></span>
+                <div style="margin-top:0px;color:#000000;text-align:center;" id="openAuditions-markdown3">
+                   <p>
+                       <strong>{{x.session_name}}</strong>
+                  </p>
+                </div>
+                <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown4">
+                   <p>
+                    <strong>Start Date:</strong>{{x.start_date}}
+                  </p>
+                </div>
+                <div style="margin-top:0px;color:#000000;" id="openAuditions-markdown5">
+                <p>
+                    <strong>End Date:</strong>{{x.end_date}}</p>
+               </div>
+               <div>
+               <span>
+                   <a style="background-color:#fff;box-shadow:none;border:none;padding:5px 10px;font-size:12px;" ng-href="#/page1/page24/{{x.id}}">New Submission ({{x.counts.submissions[0]}})</a>
+                   <a style="background-color:#fff;box-shadow:none;border:none;padding:5px 10px;font-size:12px;" ng-href="#/page1/page23/{{x.id}}">Selected({{x.selected_count}})</a>
+                   <a style="background-color:#fff;box-shadow:none;border:none;padding:5px 10px;font-size:12px;" ng-href="#/page1/page25/{{x.id}}">Rejected ({{x.rejected_count}})</a>
+                   <a style="background-color:#fff;box-shadow:none;border:none;padding:5px 10px;font-size:12px;" ng-href="#/page1/page26/{{x.id}}">Pending ({{x.pending_count}})</a>
+                   <a style="background-color:#fff;box-shadow:none;border:none;padding:5px 10px;font-size:12px;" ng-href="#/page1/page27/{{x.id}}">Trash ({{x.transh_count}})</a>
+               </span>
+            </div>
+            <a class="button button-positive button-small button-block button-outline icon ion-edit" id="openAuditions-button10" ng-href="#/page1/page16/{{x.id}}" >Edit this Audition</a>
+            <a class="button button-positive button-small button-block button-outline icon ion-android-person-add" id="openAuditions-button11"ng-href="#/page1/page17/{{x.id}}">Invite Users</a>
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

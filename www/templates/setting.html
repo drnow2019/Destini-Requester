@@ -1,0 +1,32 @@
+<ion-view style="background-color: rgb(245, 245, 245);" id="page14" title="Setting" hide-nav-bar="true">
+
+<ion-header-bar align-title="center" class="bar-stable">
+  <div>
+    <button class="button-icon icon ion-ios-arrow-back" ng-click="back()"> Back</button>
+</div>
+  <i class="title">Setting</i>
+</ion-header-bar>
+<ion-content class="" padding="true">
+        <div>
+            <i>Account</i>
+            <br>
+        </div>
+        <div id="setting-container3">
+            <a class="button button-light button-small button-block  " style="color:#160B03;text-align:left"
+              ng-click="logOut()">Logout</br>Logged in as {{email}}
+            </a>
+            </div>
+        <div><hr>
+            <i>Profile</i>
+            <br>
+        </div>
+        <div id="setting-container3">
+            <a class="button button-light button-small button-block  " style="color:#160B03;text-align:left"
+              ng-click="profile()">Profile</a>
+            </div>
+            <div id="setting-container3">
+            <a class="button button-light button-small button-block  " style="color:#160B03;text-align:left"
+              ng-click="editProfile()">Edit Profile</a>
+            </div><hr>
+    </ion-content>
+</ion-view>

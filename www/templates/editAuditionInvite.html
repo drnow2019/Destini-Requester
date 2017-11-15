@@ -1,0 +1,240 @@
+<ion-view style="" id="page8" title="Edit Audition">
+<ion-content class="has-header" padding="true" style="background: url(img/OEP0UIydSCmHNm1MAM4m_green_background.png) 
+no-repeat center;background-size:cover;" ng-controller="editAuditionInviteCtrl">
+<form  name="createAuditionForm"class="list" id="createNewAudition-form8" ng-submit="submitForm()" class="list" 
+method="post" novalidate>
+<div id="createNewAudition-card22" class="list card">
+<ion-item style="" id="createNewAudition-list-item9" class="item-icon-left">            
+<i class="icon ion-information"></i>Basic Details</ion-item>
+
+<div style="">
+
+<label id="createAudition-input13" class="item item-input"  ng-class="{ 'has-error' : createAuditionForm.
+name.$invalid && !createAuditionForm.name.$pristine }">
+<input placeholder="{{editdata.session_name}}"  type="text" class="form-control" name="name" ng-model="editdata.session_name" required>
+</label>
+                   <p ng-show="createAuditionForm.name.$invalid && !createAuditionForm.name.$pristine" placeholder="Audition Name"><font color="red">Audition Name is required.</font></p>
+
+                
+                  <label id="createNewAudition-textarea1" class="item item-input"    ng-class="{ 'has-error' : 
+                      createAuditionForm.textarea.$invalid && !createAuditionForm.textarea.$pristine }">
+                       <textarea placeholder="Description" class="form-control" name="textarea" ng-model="editdata.short_description"required></textarea>
+                    </label>
+                    <p ng-show="createAuditionForm.textarea.$invalid && !createAuditionForm.textarea.$pristine" placeholder="Description"><font color="red">Audition Description required.</font></p>
+
+                
+                    <label id="createNewAudition-input14" class="item item-input"ng-class="{ 'has-error' : createAuditionForm.country$invalid && !createAuditionForm.country.$pristine }">
+                        <input placeholder="Country" type="text" class="form-control" name="country" ng-model="editdata.country"required>
+                    </label>
+                    <p ng-show="createAuditionForm.country.$invalid && !createAuditionForm.country.$pristine" placeholder="Country"><font color="red">Country Name is required.</font></p>
+
+                
+                    <label id="createNewAudition-input15" class="item item-input"ng-class="{ 'has-error' : createAuditionForm.state.$invalid && !createAuditionForm.state.$pristine }">
+                        <input placeholder="State" type="text"class="form-control" name="state" ng-model="editdata.state"required>
+                    </label>
+                    <p ng-show="createAuditionForm.state.$invalid && !createAuditionForm.state.$pristine" placeholder="State"><font color="red">State Name is required.</font></p>
+
+                
+                    <label id="createNewAudition-input16" class="item item-input"ng-class="{ 'has-error' : createAuditionForm.city.$invalid && !createAuditionForm.city.$pristine }">
+                        <input placeholder="City" type="text"class="form-control" name="city" ng-model="editdata.city"required>
+                    </label>
+                     <p ng-show="createAuditionForm.city.$invalid && !createAuditionForm.city.$pristine" placeholder="City"><font color="red">City Name is required.</font></p>
+
+                
+                    <label id="createNewAudition-input17" class="item item-input"ng-class="{ 'has-error' : createAuditionForm.zipcode.$invalid && !createAuditionForm.zipcode.$pristine }">
+                        <input placeholder="Zip Code" type="text"class="form-control" name="zipcode" ng-model="editdata.zip_code"required>
+                    </label>
+                    <p ng-show="createAuditionForm.zipcode.$invalid && !createAuditionForm.zipcode.$pristine" placeholder="Zip Code"><font color="red">Zip Code is required.</font></p>
+              </div>
+            </div>
+            <div id="createNewAudition-card21" class="list card">
+               <ion-item style="" id="createNewAudition-list-item10" class="item-icon-left">
+                <i class="icon ion-android-calendar"></i>Schedule of Audition</ion-item>
+                <div>
+                <!--<label id="createNewAudition-input18" class="item item-input"ng-class="{ 'has-error' : createAuditionForm. sdate.$invalid && !createAuditionForm.sdate.$pristine }">
+                 <button class="button button-block button-light"ng-click="showDatePicker()" ng-model="newAudition.sdate">Start date:{{newdate | date:'MMMM/dd/yyyy' }}</button>
+              </label> <p ng-show="createAuditionForm.sdate.$invalid && !createAuditionForm.sdate.$pristine"><font color="red"> Start Date is required.</font></p></div>
+
+              <label class="item item-input item-stacked-label">
+              <span class="input-label">Date</span>
+              <button class="button button-block button-light"ng-click="showDatePicker()" ng-model="newAudition.sdate">{{newdate | date:'MMMM/dd/yyyy' }}</button>
+             </label>
+
+              <div> 
+              <label id="createNewAudition-input18" class="item item-input"ng-class="{ 'has-error' : createAuditionForm.edate.$invalid && !createAuditionForm.edate.$pristine }">
+              <button class="button button-block button-light"ng-click="showDatePicker()" ng-model="newAudition.edate">End date:{{newdate | date:'MMMM/dd/yyyy' }}</button>
+              </label> 
+               <p ng-show="createAuditionForm.edate.$invalid && !createAuditionForm.edate.$pristine" placeholder="Start Date (MM-DD-YYYY)"><font color="red">End Date is required.</font></p></div>-->
+              <label id="createNewAudition-input18" class="item item-input"ng-class="{ 'has-error' : createAuditionForm.startDate.$invalid && !createAuditionForm.startDate.$pristine }">
+                        <input placeholder="Start Date(dd-mm-yyyy)" type="text"class="form-control" name="startDate" ng-model="editdata.start_date" ng-pattern="/^(0?[1-9]|1\d|2[0-8]|29(?=[-]\d?\d[-](?!1[01345789]00|2[1235679]00)\d\d(?:[02468][048]|[13579][26]))|30(?![-]0?2)|31(?=[-]0?[13578]|[-]1[02]))[-](0?[1-9]|1[0-2])[-]([12]\d{3})$/"required>
+                    </label>
+                    <p ng-show="createAuditionForm.startDate.$invalid && !createAuditionForm.startDate.$pristine" placeholder="Start Date(yyyy-mm-dd)"><font color="red">Start Date is required.With proper format</font></p>
+
+
+               <label id="createNewAudition-input19" class="item item-input"ng-class="{ 'has-error' : createAuditionForm.endDate.$invalid && !createAuditionForm.endDate.$pristine }">
+                        <input placeholder="End Date(dd-mm-yyyy)" type="text"class="form-control" name="endDate" ng-model="editdata.end_date" ng-pattern="/^(0?[1-9]|1\d|2[0-8]|29(?=[-]\d?\d[-](?!1[01345789]00|2[1235679]00)\d\d(?:[02468][048]|[13579][26]))|30(?![-]0?2)|31(?=[-]0?[13578]|[-]1[02]))[-](0?[1-9]|1[0-2])[-]([12]\d{3})$/" required>
+                    </label>
+                    <p ng-show="createAuditionForm.endDate.$invalid && !createAuditionForm.endDate.$pristine" placeholder="End Date(yyyy-mm-dd)"><font color="red">End Date is required.With proper format</font></p>     
+              </div>
+            </div>
+            <div id="createNewAudition-card23" class="list card">
+                  <ion-item style="" id="createNewAudition-list-item13" class="item-icon-left">
+                   <i class="icon ion-gear-b"></i>Audition Configuration</ion-item>
+                   <label id="createNewAudition-select1" class="item item-select"ng-class="{ 'has-error' : createAuditionForm.invite.$invalid && !createAuditionForm.invite.$pristine }">
+                      <span  class="input-label">Invite Only</span>
+                       <select class="form-control" name="invite" ng-model="editdata.invite_only"  required>Select
+                         <option  selected>{{editdata.invite_only}}</option>
+                         <option ng-if="editdata.invite_only==='No'">Yes</option>
+                         
+                             <option ng-if="editdata.invite_only==='Yes'">No</option>                                                                              
+                       </select>
+                   </label>
+                    <p ng-show="createAuditionForm.invite.$invalid && !createAuditionForm.invite.$pristine" ><font color="red">Select at least one option.</font></p>
+
+                    <label id="createNewAudition-select2" class="item item-select"ng-class="{ 'has-error' : createAuditionForm.whoapply.$invalid && !createAuditionForm.whoapply.$pristine }">
+                        <span class="input-label">Who Can Apply?</span>
+                 <select class="form-control" name="whoapply" ng-model="editdata.type" required>
+                         <option  selected>{{editdata.type}}</option>
+                         <option ng-if="editdata.type==='Non Union Based'">Union Based</option>
+                         <option  ng-if="editdata.type==='Union Based'">Non Union Based</option>
+                          
+                    </select>
+                    </label>
+                    <p ng-show="createAuditionForm.whoapply.$invalid && !createAuditionForm.whoapply.$pristine" ><font color="red">Select at least one option.</font></p>
+
+                
+                  <label id="createNewAudition-select3" class="item item-input" ng-class="{ 'has-error' : createAuditionForm.respond.$invalid && !createAuditionForm.respond.$pristine }">
+                  <input placeholder="How many can respond max 250" type="number" class="form-control" min="1" max="250" name="respond" ng-model="editdata.max_sessions" required>
+                    </label>
+                  
+                 <p ng-show="createAuditionForm.respond.$invalid && !createAuditionForm.respond.$pristine" ><font color="red">Give number of respond</font></p>
+
+                
+                 <!--  <label id="createNewAudition-select4" class="item item-select"ng-class="{ 'has-error' : createAuditionForm.type.$invalid && !createAuditionForm.type.$pristine }">
+                    <span class="input-label">Audition Type</span>
+                    <select class="form-control" name="type" ng-model="editdata.session_type" >
+                        <option  selected>{{editdata.session_type}}</option>
+                        <option ng-if="editdata.session_type==='Video' ||editdata.session_type==='Photo'|| editdata.session_type==='Both'">None</option>
+                        <option ng-if="editdata.session_type==='None' ||editdata.session_type==='Photo'|| editdata.session_type==='Both'">Video</option>
+                        <option ng-if="editdata.session_type==='Video' ||editdata.session_type==='None'|| editdata.session_type==='Both'">Photo</option>
+                        <option ng-if="editdata.session_type==='Video' ||editdata.session_type==='Photo'|| editdata.session_type==='None'">Both</option>
+                    </select>
+                  </label>
+                 <p ng-show="createAuditionForm.type.$invalid && !createAuditionForm.type.$pristine"><font color="red">Select at least one option.</font></p>
+
+                
+                  <label id="createNewAudition-select5" class="item item-select" >
+                    <span class="input-label">Video Needed</span>
+                    <select class="form-control" name="video" ng-model="editdata.video_need">
+                      <option></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </label>
+                  <label id="createNewAudition-select6" class="item item-select">
+                    <span class="input-label">Video Length(In Min.)</span>
+                    <select class="form-control" name="videol" ng-model="editdata.video_length">
+                      <option></option> 
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </label>
+                  
+                
+                   <label id="createNewAudition-select7" class="item item-select">
+                    <span class="input-label">Photos Needed</span>
+                    <select class="form-control" name="photo" ng-model="editdata.photos_need">
+                      <option></option>
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </label>
+                   -->
+                     <label id="createNewAudition-select4" class="item item-select"ng-class="{ 'has-error' : createAuditionForm.type.$invalid && !createAuditionForm.type.$pristine }">
+                    <span class="input-label">Audition Type</span>
+                    <select class="form-control" name="type" ng-model="editdata.session_type" required>
+                         <option  selected>{{editdata.session_type}}</option>
+                        <option ng-if="editdata.session_type==='Video' ||editdata.session_type==='Photo'|| editdata.session_type==='Both'">None</option>
+                        <option ng-if="editdata.session_type==='None' ||editdata.session_type==='Photo'|| editdata.session_type==='Both'">Video</option>
+                        <option ng-if="editdata.session_type==='Video' ||editdata.session_type==='None'|| editdata.session_type==='Both'">Photo</option>
+                        <option ng-if="editdata.session_type==='Video' ||editdata.session_type==='Photo'|| editdata.session_type==='None'">Both</option>
+                    </select>
+                  </label>
+                 <p ng-show="createAuditionForm.type.$invalid && !createAuditionForm.type.$pristine"><font color="red">Select atleast one option.</font></p>
+                 
+                  <label id="createNewAudition-select5" class="item item-select"ng-class="{ 'has-error' : createAuditionForm.video.$invalid && !createAuditionForm.video.$pristine }" ng-show="editdata.session_type=='Video'||editdata.session_type=='Both'">
+                    <span class="input-label">Video Needed</span>
+                    <select class="form-control" name="video" ng-model="editdata.video_needed">
+                      <option >1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </label>
+                  <label id="createNewAudition-select5" class="item item-select" ng-show="editdata.session_type=='Video'||editdata.session_type=='Both'">
+                    <span class="input-label">Video Length(In Min.)</span>
+                    <select class="form-control" name="video" ng-model="editdata.video_length">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </label>
+                  
+                   <label id="createNewAudition-select6" class="item item-select"ng-class="{ 'has-error' : createAuditionForm.photo.$invalid && !createAuditionForm.photo.$pristine }" ng-show="editdata.session_type=='Photo'||editdata.session_type=='Both'">
+                    <span class="input-label">Photos Needed</span>
+                    <select class="form-control" name="photo" ng-model="editdata.photos_need"> 
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                    </select>
+                  </label>
+                  
+                     <label id="createNewAudition-select3" class="item item-input" >
+                  <textarea placeholder="Tags with ,(comma) seprater" type="text" class="form-control"  ng-model="editdata.tags" style="width:110%" ></textarea>
+                    </label>
+
+
+                    <label id="createNewAudition-textarea2" class="item item-input">
+                       <textarea placeholder="Additional Detail" name="information" ng-model="editdata.full_description"></textarea>
+                    </label>
+                
+                  
+           </div>
+           <div id="createNewAudition-card24" class="list card">
+               <ion-item style="" id="createNewAudition-list-item15" class="item-icon-left">
+                   <i class="icon ion-android-bulb"></i>Pre-Screen Questions (Optional)</ion-item>
+           
+                    <label id="createNewAudition-input23" class="item item-input">
+                    <input placeholder="Question 1" type="text"class="form-control" name="ques1" ng-model="editdata.question1">
+                   </label>
+                    
+
+
+                   <label id="createNewAudition-input24" class="item item-input">
+                    <input placeholder="Question 2" type="text" class="form-control" name="ques2" ng-model="editdata.question2"> 
+                   </label>
+                  
+                
+                    <label id="createNewAudition-input25" class="item item-input">
+                    <input placeholder="Question 3" type="text" class="form-control" name="ques3" ng-model="editdata.question3"> 
+                   </label>
+                    
+
+            
+                    <label id="createNewAudition-input26" class="item item-input">
+                    <input placeholder="Question 4" type="text" class="form-control" name="ques4" ng-model="editdata.question4">
+                   </label>
+                    
+                
+                   <label id="createNewAudition-input27" class="item item-input">
+                    <input placeholder="Question 5" type="text" class="form-control" name="ques5" ng-model="editdata.question5">
+                  </label>
+                           
+           </div>
+              <button class="button button-balanced button-large button-block" id="createNewAudition-button9"  ng-click="editData()" ng-disabled="createAuditionForm.$invalid">Confirm Changes &amp; Exit</button>
+            
+        </form>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,97 @@
+<style type="text/css">
+  
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+<ion-view title="Edit Requester Profile"  class=" " >
+     <ion-content padding="true" class="has-header" ng-controller="requesterProfileCtrl">
+
+     <ion-item style="" id="editProfileForm-list-item9" class="item-icon-left">            
+     <i class="icon ion-information"></i>Requester Details</ion-item>
+
+
+
+    <!-- FORM ============ -->
+        <ion-item>
+           <img style="display: block; margin-left: auto; margin-right: auto;" src="http://destini.io/public/frontEnd/uploads/image/{{profile.image}}" width="100%"; height="200px">
+           <span  class="icon ion-android-image" style="height:30px" ng-click="takePicture()">Change image</span>
+           </ion-item>
+
+               <form name="editProfileForm" class="list" id="editProfileForm-form8" ng-submit="submitForm()" class="list" method="post" novalidate>
+
+		      <label id="editProfileForm-input14" class="item item-input" ng-class="{ 'has-error' : editProfileForm.firstname.$invalid && !editProfileForm.firstname.$pristine }">
+                        <input placeholder="First_Name" name="firstname" type="text" class="form-control"  ng-model="profile.first_name" required/>
+                    </label>
+                    <p ng-show="editProfileForm.firstname.$invalid && !editProfileForm.firstname.$pristine" placeholder="First Name"><font color="red">Your  First Name is required.</font></p>
+
+                    <label id="editProfileForm-input14" class="item item-input" ng-class="{ 'has-error' : editProfileForm.lastname.$invalid && !editProfileForm.lastname.$pristine }">
+
+                        <input placeholder="Last_Name" name="lastname" type="text" class="form-control"  ng-model="profile.last_name" required/>
+                    </label>
+                     <p ng-show="editProfileForm.lastname.$invalid && !editProfileForm.lastname.$pristine" placeholder="First Name"><font color="red">Your  Last Name is required.</font></p>
+
+                    <label id="editProfileForm-input14" class="item item-input">
+                        <input placeholder="Mail_id" type="text" class="form-control" name="email" ng-model="profile.email" readonly="true">
+                    </label>
+                    <label id="editProfileForm-input14" class="item item-input" ng-class="{ 'has-error' : editProfileForm.con.$invalid && !editProfileForm.con.$pristine }">
+                        <input placeholder="+1-xxx-xxx-xxxx" type="text" name="con" class="form-control"  ng-model="profile.contact" ui-br-phone-number required>
+
+                    </label>
+                    <p ng-show="editProfileForm.con.$invalid && !editProfileForm.con.$pristine" placeholder="First Name"><font color="red">Your Contact no is required.</font></p>
+
+                    <label id="editProfileForm-input14" class="item item-input" ng-class="{ 'has-error' : editProfileForm.age.$invalid && !editProfileForm.age.$pristine }">
+                        <input placeholder="Age" name="age" type="text" class="form-control"  ng-model="profile.age"required>
+                    </label>
+                    <p ng-show="editProfileForm.age.$invalid && !editProfileForm.age.$pristine" placeholder="First Name"><font color="red">Your Age required.</font></p>
+
+                    <label id="editProfileForm-input14" class="item item-input"  ng-class="{ 'has-error' : editProfileForm.videovideo.$invalid && !editProfileForm.video.$pristine }">
+                        <textarea placeholder="Introductory video"  name="video" class="form-control"  ng-model="profile.intro_video" required/></textarea>
+                    </label>
+                    <p ng-show="editProfileForm.video.$invalid && !editProfileForm.video.$pristine" placeholder="First Name"><font color="red">Video link required</font></p>
+
+                    <label id="editProfileForm-input14" class="item item-input" ng-class="{ 'has-error' : editProfileForm.organization.$invalid && !editProfileForm.organization.$pristine }">
+                        <input placeholder="Organization" name="organization" type="text" class="form-control"  ng-model="profile.organisation_name" required/>
+                    </label>
+                    <p ng-show="editProfileForm.organization.$invalid && !editProfileForm.organization.$pristine" placeholder="First Name"><font color="red">Your Organization details required</font></p>
+
+                    <label id="editProfileForm-input14" class="item item-input" >
+                        <textarea placeholder="About_Me"  class="form-control" name="aboutme" ng-model="profile.about_me" ></textarea>
+                    </label>
+
+                    <label id="editProfileForm-input14" class="item item-input" >
+                        <input placeholder="Movie_Credite" type="text" class="form-control" name="moviecredit" ng-model="profile.movies_credits" >
+                    </label>
+
+                    <label id="editProfileForm-input14" class="item item-input" ng-class="{ 'has-error' : editProfileForm.zipcode.$invalid && !editProfileForm.zipcode.$pristine }">
+                        <input placeholder="Zip Code"  name="zipcode" type="text" class="form-control"  ng-model="profile.zipcode" required/>
+                    </label>
+                    <p ng-show="editProfileForm.zipcode.$invalid && !editProfileForm.zipcode.$pristine" placeholder="First Name"><font color="red">Your zipcode details required</font></p>
+
+
+                    <label id="editProfileForm-input14" class="item item-input" >
+                        <input placeholder="Website" type="text" class="form-control" name="website" ng-model="profile.website" >
+                    </label>
+
+                    <label id="editProfileForm-input14" class="item item-input" >
+                        <input placeholder="Facebook_Link" type="text" class="form-control" name="fblink" ng-model="profile.facebook_profile_link" >
+                    </label>
+                    <label id="editProfileForm-input14" class="item item-input" >
+                        <input placeholder="Twitter_Link" type="text" class="form-control" name="twitterlink" ng-model="profile.twitter_profile_link" >
+                    </label>
+                    <button class="button button-balanced button-small button-block" id="editProfileForm-button9"  ng-click="editProfileData()" ng-disabled="editProfileForm.$invalid">Confirm Changes &amp; Exit</button>
+            
+                    </form>
+    </ion-content>
+</ion-view>

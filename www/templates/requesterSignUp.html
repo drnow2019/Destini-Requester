@@ -1,0 +1,81 @@
+
+
+
+
+
+
+<ion-view  id="page7" title="Requester Sign Up" hide-nav-bar="true" style="background: url(img/v8KVnS3Sr26LlKjHjFY2_green_background.png) no-repeat center;background-size:cover;" >
+<ion-header-bar align-title="center" class="bar-stable">
+  <div class="buttons">
+  <button class="button-icon icon ion-ios-arrow-back" ng-click="$ionicGoBack()"> Back</button>
+  </div>
+  <i class="title">Requester Sign Up</i>
+</ion-header-bar>
+
+    <ion-content class="has-header" padding="true" ng-controller="requesterSignUpCtrl">
+        
+            <div>
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/qxnZuH0lTk6ZYX5eSEAC_destinivers3.png" height="10%" width="40%">
+            </div>
+        <div class="col-sm-6">    
+            <form name="userForm" ng-submit="submitForm()" class="list" method="post" novalidate>
+            <ion-list id="requesterSignUp-list5">
+                <label id="requesterSignUp-input7" class="item item-input" ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
+                <input placeholder="First Name" class="form-control"type="text" name="firstName" ng-model="firstName"required>
+                </label>
+                <p ng-show="userForm.firstName.$invalid && !userForm.firstName.$pristine" placeholder="First Name"><font color="red">Your  First Name is required.</font></p>
+
+
+                <label id="requesterSignUp-input8" class="item item-input" ng-class="{ 'has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine }">
+                 <input placeholder="Last Name" class="form-control"type="text" name="lastName" ng-model="lastName" required>
+                </label>
+                <p ng-show="userForm.lastName.$invalid && !userForm.lastName.$pristine" placeholder="Last Name" class="help-block"><font color="red">Your  Last Name is required.</font></p>
+
+                
+
+
+
+
+                <label id="requesterSignUp-input9" class="item item-input" ng-class="{ 'has-error' : userForm.organization.$invalid && !userForm.organization.$pristine }">
+                    <input placeholder="Organization" class="form-control"class="form-control"type="text" name="organization" ng-model="organization" required/>
+                </label> 
+                <p ng-show="userForm.organization.$invalid && !userForm.organization.$pristine" placeholder="Organization" class="help-block"><font color="red">Your  Organization Name is required.</font></p>
+
+                 <label id="requesterSignUp-input8" class="item item-input" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine }">
+                 <input placeholder="+1-xxx-xxx-xxxx"  class="form-control" type="text" name="phone" ng-model="phone " ui-br-phone-number required>
+                </label>
+                <p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine" placeholder="+1-xxx-xxx-xxxx" class="help-block"><font color="red">Your  Phone Number is required.</font></p>
+
+                <label id="requesterSignUp-input10" class="item item-input" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                <input placeholder="Email" class="form-control" type="email" name="email" ng-model="email" required/>
+                </label>
+                 <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" placeholder="Email" class="help-block"><font color="red">Enter a valid email.</font></p>
+
+
+
+                <label id="requesterSignUp-input11" class="item item-input" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+                    <input placeholder="Password"class="form-control" type="password" name="password" ng-model="password"  ng-minlength="6" ng-maxlength="25" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required/>
+                </label>
+            <!-- <span class="info-icon"><a href="javascript:;" data-toggle="popover" data-content="*Must be between 8 and 20 characters.
+            *Must contain one lower &amp; uppercase letter.
+            *One non-alpha character (a number or a symbol." ><i class="fa fa-info"></i></a></span> -->
+                
+               <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block"><font color="red">Must contain 1 upper case & 1 special character.</font></p>
+
+
+
+
+                <label id="requesterSignUp-input12" class="item item-input" ng-class="{ 'has-error' : userForm.confirmpassword.$invalid && !userForm.coinfirmpassword.$pristine }">
+                    <input placeholder="Confirm Password" class="form-control"type="password" name="confirmpassword" ng-model="confirmpassword" valid-password-c="password" required/>
+                </label>
+                <p ng-show="userForm.confirmpassword.$error.noMatch" class="help-block"><font color="red">Password must be same</font></p>
+
+
+            </ion-list>
+            <div style="margin-right:-20px;">
+                <button  ng-click="register()" class="button button-light  button-full" style="left:-10px;" id="requesterSignUp-button7" ng-disabled="userForm.$invalid" >Sign up</button>
+            </div>
+        </form>
+        </div>
+    </ion-content>
+</ion-view>

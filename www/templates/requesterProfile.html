@@ -1,0 +1,56 @@
+<style type="text/css">
+  
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe, .video-container object, .video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+<ion-view title="Profile"  class=" " >
+     <ion-content padding="true" class="has-header" ng-controller="requesterProfileCtrl">
+    <!-- FORM ============ -->
+		
+      <ion-list id="talentPool-list12">
+            <ion-item style=""><center>Name: {{profile.first_name}} {{profile.last_name}}</center></ion-item>
+            <ion-item style="" class="item-thumbnail-left">
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="http://destini.io/public/frontEnd/uploads/image/{{profile.image}}" width="100%"></ion-item>
+             <ion-item style="">Email id: {{profile.email}}</ion-item>
+              <ion-item style="">Mobile Number: {{profile.contact}}</ion-item>
+               <ion-item style="">Age: {{profile.age}}</ion-item>
+               <ion-item>
+                
+                <div class="video-container">
+                    <iframe src="{{profile.intro_video |  trustAsResourceUrl}}" frameborder="0" width="560" height="315"></iframe>
+                </div>
+               
+            </ion-item>
+            <ion-item style="">Organization: {{profile.organisation_name}}</ion-item>
+            <ion-item class="item-text-wrap">About me: {{profile.about_me}}</ion-item>
+             <ion-item style="">Movie Credits: {{profile.movies_credits}} </ion-item>
+              <ion-item style="">Zip Code: {{profile.zipcode}} </ion-item>
+            
+            <ion-item style="">Website: {{profile.website}} </ion-item>
+            
+            <ion-item style="">Facebook Profile Link: {{profile.facebook_profile_link}}</ion-item>
+			
+           
+            <ion-item style="">Twitter Profile link: {{profile.twitter_profile_link}} </ion-item>
+			
+            
+            
+            <ion-item style="">Audition Count: {{count}} </ion-item>
+            
+            
+            </ion-list>
+
+    </ion-content>
+</ion-view>
